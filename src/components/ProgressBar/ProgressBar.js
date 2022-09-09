@@ -28,32 +28,36 @@ const ProgressBar = ({ value, size, ariaLabel }) => {
           aria-valuenow={value}
           style={styles}
     >
-      <Bar value={value}/>
+      <BarCornerTrimmer>
+        <Bar value={value}/>
+      </BarCornerTrimmer>
     </Wrapper>
     </>;
 };
 
 const Wrapper = styled.div`
-  width: 100%;
-  
-  height: var(--height);
   padding: var(--padding);
   
   border-radius: var(--background-radius);
   background: ${COLORS.transparentGray15};
   
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
-`
+  
+  
+`;
+
+const BarCornerTrimmer = styled.div`
+ border-radius: var(--background-radius);
+ /* Trim off corners when bar is near full */
+ overflow: hidden;
+`;
 
 const Bar = styled.div`
     background: ${COLORS.primary};
     width: ${p => p.value}%;
-    height: 100%;
+    height: var(--height);
     
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: ${p => p.value/100 * 4}px;
-    border-bottom-right-radius: ${p => p.value/100 * 4}px;
+    border-radius: 4px 0 0 4px;
 `;
 
 export default ProgressBar;

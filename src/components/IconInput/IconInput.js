@@ -8,14 +8,14 @@ import VisuallyHidden from '../VisuallyHidden';
 
 const SIZES = {
   small: {
-    "--font-size": "14px",
-    "--line-height": "16px",
+    "--font-size": `${14/16}rem`,
+    "--line-height": `${16/16}rem`,
     "--border-width": "1px",
     "--padding": "5px 5px 2px 20px"
   },
   large: {
-    "--font-size": "18px",
-    "--line-height": "21px",
+    "--font-size": `${18/16}rem`,
+    "--line-height": `${21/16}rem`,
     "--border-width": "1px",
     "--padding": "7px 7px 4px 32px"
   }
@@ -104,6 +104,8 @@ const StyledIcon = styled(Icon)`
   bottom: 0;
   margin: auto;
   font-weight: 700;
+  
+  pointer-events: none;
 `;
 
 export default IconInput;

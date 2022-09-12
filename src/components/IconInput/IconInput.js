@@ -48,7 +48,7 @@ const IconInput = ({
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   position: relative;
   isolation: isolate;
   width: max-content;
@@ -104,8 +104,6 @@ const StyledIcon = styled(Icon)`
   bottom: 0;
   margin: auto;
   font-weight: 700;
-  
-  pointer-events: none;
 `;
 
 export default IconInput;
